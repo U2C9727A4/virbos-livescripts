@@ -307,7 +307,7 @@ ShellnetConfig () {
 		fi
 		elif [ "$answer" = "n" ]; then
 			setup_network
-	fi	fi
+	fi
 }	
 
 # Begin
