@@ -237,6 +237,7 @@ setup_keymaps() {
 	done
 	ask_customhelp "What keymap would you like to use?" "$keymaps" us "localectl --no-pager list-keymaps | less -E"
 	keymap="$answer"
+	loadkeys $keymap
 }
 
 setup_network() {
