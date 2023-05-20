@@ -300,7 +300,7 @@ or would you like to do it manually using a shell?" tui,shell tui
 }
 
 ShellnetConfig () {
-	if [ "$RanShellnet = "true" ]; then
+	if [ "$RanShellnet" = "true" ]; then
 		ask_yn "Did you configure the network?" y
 		if [ "$answer" = "y" ]; then
 			testnetwork
