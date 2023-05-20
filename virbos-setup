@@ -304,9 +304,11 @@ ShellnetConfig () {
 		ask_yn "Did you configure the network?" y
 		if [ "$answer" = "y" ]; then
 			testnetwork
+		fi
 		elif [ "$answer" = "n" ]; then
 			setup_network
-}
+	fi	fi
+}	
 
 # Begin
 
