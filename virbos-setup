@@ -249,6 +249,7 @@ or would you like to do it manually using a shell?" tui,shell tui
 			nmtui
 		elif [ "$answer" = "shell" ]; then
 			writeln "Lead the way, captain!"
+			export RanShellnet="true"
 			$VIRBOSSETUP_SHELL
 		fi
 		if testnetwork; then return 0; fi
@@ -298,6 +299,15 @@ or would you like to do it manually using a shell?" tui,shell tui
 	done
 }
 
+ShellnetConfig () {
+	if [ "$RanShellnet = "true" ]; then
+		ask_yn "Did you configure the network?" y
+		if [ "$answer" = "y" ]; then
+			testnetwork
+		elif [ "$answer" = "n" ]; then
+			setup_network
+}
+
 # Begin
 
 if [ "$(whoami)" != "root" ]; then
@@ -310,6 +320,7 @@ writeln "(without the quotation marks) to get a list of available options."
 writeln "The default answer for a question is always in square brackets."
 writeln "If you wish to use that answer, you can press Enter."
 
+ShellnetConfig
 setup_keymaps
 setup_network
 setup_disks
